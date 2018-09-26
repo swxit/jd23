@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0px;
+        padding: 0px;
+
+    }
+    html{
+        font-size: 100px;
+    }
+
+    body{
+        font-size: 16px;
+
+    }
+
+    .box1{
+        font-size: 0.2rem;
+        width: 3.75rem;
+        height: 3.75rem;
+        background-color: #ccc;
+    }
+    .box2{
+        font-size: 0.3rem;
+        width: 3.75rem;
+        height: 3.75rem;
+        background-color: yellowgreen;
+    }
+    .box3{
+        font-size: 0.4rem;
+        width: 3.75rem;
+        height: 3.75rem;
+        background-color: greenyellow;
+    }
+    </style>
+</head>
+<body>
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <div class="box3">box3</div>
+    <div class="box4">
+        box4
+    </div>
+    <script>
+        //添加一个resize事件屏幕宽度马上计算和设置
+        window.addEventListener('resize',setHtmlFontSize);
+        setHtmlFontSize();
+        function setHtmlFontSize(){
+            // 获取当前的屏幕的宽度
+            var windowWidth =document.documentElement.offsetWidth;
+            // 以标准的375屏幕 根元素100px 需要3.75rem沾满正屏 做参考点
+            var setHtmlFontSize =windowWidth/3.75;
+            // 当前根元素的字体大小设置给当前html的fontSize 注意要带单位
+            document.querySelector('html').style.fontSize =htmlFontSize+'px';
+        }
+    </script>
+</body>
+</html>
